@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "Liên hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Contact Detail -->
+<div class="container contact-section">
+    <div class="section-padding"></div>
+    <div class="row">
+        <div class="col-md-9 contact-form-section">
+            <div class="section-header">
+                <h3>Phản hồi</h3>
+            </div>
+            <form id="contact-form" class="contactus-form">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <input type="text"
+                                   name="contact-name"
+                                   class="form-control"
+                                   id="input_name"
+                                   placeholder="họ và tên*"
+                                   required="" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <input type="email"
+                                   name="contact-email"
+                                   class="form-control"
+                                   id="input_email"
+                                   placeholder="Email*"
+                                   required="" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <input type="text"
+                                   name="contact-phone"
+                                   class="form-control"
+                                   id="input_phone"
+                                   placeholder="Số điện thoại" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <input type="text"
+                                   name="contact-subject"
+                                   class="form-control"
+                                   id="input_subject"
+                                   placeholder="Chủ đề" />
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <textarea rows="5"
+                                      required=""
+                                      name="contact-message"
+                                      class="form-control"
+                                      id="textarea_message"
+                                      placeholder="Phản hồi*"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <input type="submit"
+                                   value="Gửi phản hồi"
+                                   id="btn_submit"
+                                   title="send"
+                                   name="post" />
+                        </div>
+                    </div>
+                    <div id="alert-msg" class="alert-msg"></div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <div class="contactinfo-block">
+                <div class="contactinfo-content">
+                    <div class="contactbox">
+                        <span class="icon icon-House"></span>
+                        <div class="contactdetail">
+                            <p>Số 10 Điện Biên Phủ, Hà Nội, Việt Nam</p>
+                        </div>
+                    </div>
+                    <div class="contactbox">
+                        <span class="icon icon-Phone2"></span>
+                        <div class="contactdetail">
+                            <a href="tel:0969987456" title="0969987456">
+                                (+84) 123 456 789
+                            </a>
+                            <a href="tel:0112345678910" title="0112345678910">
+                                >(+84) 123 456 789
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contactbox">
+                        <span class="icon icon-Mail"></span>
+                        <div class="contactdetail">
+                            <a title="example123testing.com"
+                               href="mailto:Info@OurDomain.Com">baongochieuhuy@gmail.Com</a>
+                            <a title="example123testing.com"
+                               href="mailto:Support@OurDomain.Com">baongochieuhuy@gmail.Com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-padding"></div>
+</div>
+<!-- Contact Detail /- -->
+<!-- <div class="container-fluid no-padding map"> -->
+<div id="map-canvas-contact"
+     class="map-canvas"
+     data-lat="21.027763"
+     data-lng="105.834160"
+     data-string="Số nhà 10, Điện Biên Phủ, Hà Nội, Việt nam"
+     data-zoom="12"></div>
+<!-- </div> -->
+<!-- Map /- -->
