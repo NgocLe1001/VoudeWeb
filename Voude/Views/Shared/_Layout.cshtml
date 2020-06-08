@@ -11,31 +11,31 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <!-- Standard Favicon -->
-    <link rel="icon" type="image/x-icon" href="~/Content/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/Content/images/favicon.ico" />
     <!-- For iPhone 4 Retina display: -->
     <link rel="apple-touch-icon-precomposed"
           sizes="114x114"
-          href="~/Content/images/apple-touch-icon-114x114-precomposed.png"
+          href="/Content/images/apple-touch-icon-114x114-precomposed.png"
     <!-- For iPad: -->
     <link rel="apple-touch-icon-precomposed"
           sizes="72x72"
-          href="~/Content/images/apple-touch-icon-72x72-precomposed.png" />
+          href="/Content/images/apple-touch-icon-72x72-precomposed.png" />
     <!-- For iPhone: -->
     <link rel="apple-touch-icon-precomposed"
-          href="~/Content/images/apple-touch-icon-57x57-precomposed.png" />
+          href="/Content/images/apple-touch-icon-57x57-precomposed.png" />
     <!-- Library - Bootstrap v3.3.5 -->
-    <link rel="stylesheet" type="text/css" href="~/Content/libraries/lib.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/libraries/lib.css" />
     <!-- StrockGap Icon Fonts -->
     <link rel="stylesheet"
           type="text/css"
-          href="~/Content/libraries/strokegapicon/stroke-gap-icon.css" />
+          href="/Content/libraries/strokegapicon/stroke-gap-icon.css" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Hind:400,500,600"
           rel="stylesheet"
           type="text/css" />
 
     <!-- Custom - Theme CSS -->
-    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/style.css" />
 </head>
 <body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
 
@@ -74,7 +74,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <a title="Logo" class="navbar-brand">
-                                <img src="~/Content/images/logo.png"
+                                <img src="/Content/images/logo.png"
                                      width="43"
                                      height="51" /><span>Voude</span>
 
@@ -109,34 +109,31 @@
                                        href="#">Danh mục</a>
                                     <i class="ddl-switch fa fa-angle-down"></i>
                                     <ul class="dropdown-menu">
-
                                         <li>
-                                            @Html.ActionLink("Ẩm thực", "CouponsPage", "Home")
+                                            @Html.ActionLink("Ẩm Thực", "AmThucPage", "Category")
                                         </li>
                                         <li>
-                                            @Html.ActionLink("Mua sắm", "CouponsPage", "Home")
+                                            @Html.ActionLink("Mua Sắm", "MuaSamPage", "Category")
                                         </li>
                                         <li>
-                                            @Html.ActionLink("Sức khỏe", "CouponsPage", "Home")
-
-                                        </li>
-                                        <li>
-                                            @Html.ActionLink("Du lịch", "CouponsPage", "Home")
-
-                                        </li>
-
-                                        <li>
-                                            @Html.ActionLink("Giáo dục", "CouponsPage", "Home")
+                                            @Html.ActionLink("Sức Khỏe", "SucKhoePage", "Category")
 
                                         </li>
                                         <li>
-                                            @Html.ActionLink("Làm đẹp", "CouponsPage", "Home")
+                                            @Html.ActionLink("Du Lịch", "DuLichPage", "Category")
+
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Giáo Dục", "GiaoDucPage", "Category")
+
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Làm Đẹp", "LamDepPage", "Category")
 
                                         </li>
 
                                         <li>
                                             @Html.ActionLink("Khác", "CategoryPromotion", "Home")
-
 
                                         </li>
                                     </ul>

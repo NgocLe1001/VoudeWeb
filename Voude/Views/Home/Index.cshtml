@@ -3,8 +3,7 @@
     ViewBag.Title = "Home2222";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
+@using Voude.Areas.Admin.Models
 
 <!-- Deal Section -->
 <div id="deal-section" class="container deal-section">
@@ -16,142 +15,31 @@
         </p> -->
     </div>
     <div class="row">
-        <div class="col-md-4 col-sm-6 col-xs-6">
-            <div class="dealbox">
-                <div class="deal-thmbimg">
-                    <img src="~/Content/images/deal1.jpg"
-                         width="370"
-                         height="247"
-                         alt="deal1" />
-                    <p>
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>15%</span>
-                    </p>
-                </div>
-                <div class="deal-content">
-                    <h3>Hoàn lại 2% Tổng hóa đơn</h3>
-                    <p>Giảm 10% cho khách hàng tới ở luôn vào tháng 4</p>
-                    <a href="#" title="Lấy ngay" class="getdeal-btn">
-                        <span class="get-coupencode">12xjuox</span>
-                        <span class="getdeal">Lấy ngay</span>
-                    </a>
-                    <div class="expire"><span>Hạn sử dụng :</span> 27-12-2015</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-6">
-            <div class="dealbox">
-                <div class="deal-thmbimg">
-                    <img src="~/Content/images/deal2.jpg"
-                         width="370"
-                         height="247"
-                         alt="deal2" />
-                    <p>
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>10%</span>
-                    </p>
-                </div>
-                <div class="deal-content">
-                    <h3>Hoàn lại 5% Tổng hóa đơn</h3>
-                    <p>Giảm 10% cho khách hàng tới ở luôn vào tháng 4</p>
-                    <a href="#" title="Lấy ngay" class="getdeal-btn">
-                        <span class="get-coupencode">12xjuox</span>
-                        <span class="getdeal">Lấy ngay</span>
-                    </a>
-                    <div class="expire"><span>Hạn sử dụng :</span> 26-12-2015</div>
+        @foreach (VOUCHER vc in (ViewBag.hot as IEnumerable<VOUCHER>))
+        {
+            <div class="col-md-4 col-sm-6 col-xs-6">
+                <div class="dealbox">
+                    <div class="deal-thmbimg">
+                        <img src="@vc.images"
+                             width="370"
+                             height="247"
+                             alt="@vc.alt" />
+                        <p>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>@vc.percent</span>
+                        </p>
+                    </div>
+                    <div class="deal-content">
+                        <h3>@vc.name</h3>                      
+                        <a href="#" title="Lấy ngay" class="getdeal-btn">
+                            <span class="get-coupencode">12xjuox</span>
+                            <span class="getdeal">Lấy ngay</span>
+                        </a>
+                        <div class="expire"><span>Hạn sử dụng :</span> @vc.endDate</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-6">
-            <div class="dealbox">
-                <div class="deal-thmbimg">
-                    <img src="~/Content/images/deal3.jpg"
-                         width="370"
-                         height="247"
-                         alt="deal3" />
-                    <p>
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>12%</span>
-                    </p>
-                </div>
-                <div class="deal-content">
-                    <h3>Hoàn lại 2% Tổng hóa đơn</h3>
-                    <p>Giảm 10% cho khách hàng tới ở luôn vào tháng 4</p>
-                    <a href="#" title="Lấy ngay" class="getdeal-btn">
-                        <span class="get-coupencode">12xjuox</span>
-                        <span class="getdeal">Lấy ngay</span>
-                    </a>
-                    <div class="expire"><span>Hạn sử dụng :</span> 03-01-2016</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-6">
-            <div class="dealbox">
-                <div class="deal-thmbimg">
-                    <img src="~/Content/images/deal4.jpg"
-                         width="370"
-                         height="247"
-                         alt="deal4" />
-                    <p>
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>8%</span>
-                    </p>
-                </div>
-                <div class="deal-content">
-                    <h3>Hoàn lại 3% Tổng hóa đơn</h3>
-                    <p>Giảm 10% cho khách hàng tới ở luôn vào tháng 4</p>
-                    <a href="#" title="Lấy ngay" class="getdeal-btn">
-                        <span class="get-coupencode">12xjuox</span>
-                        <span class="getdeal">Lấy ngay</span>
-                    </a>
-                    <div class="expire"><span>Hạn sử dụng :</span> 03-01-2016</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-6">
-            <div class="dealbox">
-                <div class="deal-thmbimg">
-                    <img src="~/Content/images/deal5.jpg"
-                         width="370"
-                         height="247"
-                         alt="deal5" />
-                    <p>
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>15%</span>
-                    </p>
-                </div>
-                <div class="deal-content">
-                    <h3>Hoàn lại 2% Tổng hóa đơn</h3>
-                    <p>
-                        Giảm 10% cho khách hàng tới ở luôn vào tháng 4
-                    </p>
-                    <a href="#" title="Lấy ngay" class="getdeal-btn">
-                        <span class="get-coupencode">12xjuox</span>
-                        <span class="getdeal">Lấy ngay</span>
-                    </a>
-                    <div class="expire"><span>Hạn sử dụng :</span> 11-02-2016</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-6">
-            <div class="dealbox">
-                <div class="deal-thmbimg">
-                    <img src="~/Content/images/deal6.jpg"
-                         width="370"
-                         height="247"
-                         alt="deal6" />
-                    <p>
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>10%</span>
-                    </p>
-                </div>
-                <div class="deal-content">
-                    <h3>Hoàn lại 2% Tổng hóa đơn</h3>
-                    <p>
-                        Giảm 10% cho khách hàng tới ở luôn vào tháng 4
-                    </p>
-                    <a href="#" title="Lấy ngay" class="getdeal-btn">
-                        <span class="get-coupencode">12xjuox</span>
-                        <span class="getdeal">Lấy ngay</span>
-                    </a>
-                    <div class="expire"><span>Hạn sử dụng :</span> 26-02-2016</div>
-                </div>
-            </div>
-        </div>
+
+        }       
     </div>
     <div class="section-padding"></div>
 </div>
@@ -165,138 +53,20 @@
             <!-- <p>All popular Stores listed, covering all Shopping needs.</p> -->
         </div>
         <div class="row">
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand1.jpg"
-                         alt="brand1"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="Walmart" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
+            @foreach (PARTNER pn in (ViewBag.Partner as IEnumerable<PARTNER>))
+            {
+                <div class="col-md-2 col-sm-3 col-xs-3">
+                    <div class="brandbox">
+                        <img src="@pn.logo"
+                             alt="@pn.alt"
+                             width="178"
+                             height="100" />
+                        <a href="#" title="@pn.name" class="brand-content">
+                            <span>Tiết kiệm đến</span><span class="off-per">@pn.percent</span><span>Tổng hóa đơn</span>
+                        </a>
+                    </div>                    
                 </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand2.jpg"
-                         alt="brand2"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="Amazon" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand3.jpg"
-                         alt="brand3"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="JcPenney" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand4.jpg"
-                         alt="brand4"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="ebay" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand5.jpg"
-                         alt="brand5"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="BestBuy" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand6.jpg"
-                         alt="brand6"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="Target" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand7.jpg"
-                         alt="brand7"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="Puma" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand8.jpg"
-                         alt="brand8"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="Esprit" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand9.jpg"
-                         alt="brand9"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="Lacoste" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand10.jpg"
-                         alt="brand10"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="Mexx" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand11.jpg"
-                         alt="brand11"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="Tommey Hilfiger" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-2 col-sm-3 col-xs-3">
-                <div class="brandbox">
-                    <img src="~/Content/images/brand1.jpg"
-                         alt="brand1"
-                         width="178"
-                         height="100" />
-                    <a href="#" title="Walmart" class="brand-content">
-                        <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>Tổng hóa đơn</span>
-                    </a>
-                </div>
-            </div>
+            }
         </div>
     </div>
     <div class="section-padding"></div>
@@ -320,7 +90,7 @@
                 </div>
                 <div class="category-content">
                     <span class="icon icon-Pizza"></span>
-                    <a href="#" title="Food & Dining">Ẩm thực</a>
+                    <a href="/Category/AmThucPage" title="Food & Dining">Ẩm thực</a>
                 </div>
             </div>
         </div>
@@ -334,7 +104,7 @@
                 </div>
                 <div class="category-content">
                     <span class="icon icon-Tshirt"></span>
-                    <a href="#" title="Fashion">Mua sắm</a>
+                    <a href="/Category/MuaSamPage" title="Fashion">Mua sắm</a>
                 </div>
             </div>
         </div>
@@ -348,7 +118,7 @@
                 </div>
                 <div class="category-content">
                     <span class="icon icon-Pulse"></span>
-                    <a href="#" title="Beauty & Health">Sức khỏe</a>
+                    <a href="/Category/SucKhoePage" title="Beauty & Health">Sức khỏe</a>
                 </div>
             </div>
         </div>
@@ -362,7 +132,7 @@
                 </div>
                 <div class="category-content">
                     <span class="icon icon-Plaine"></span>
-                    <a href="#" title="Travel">Du lịch</a>
+                    <a href="/Category/DuLichPage" title="Travel">Du lịch</a>
                 </div>
             </div>
         </div>
@@ -376,7 +146,7 @@
                 </div>
                 <div class="category-content">
                     <span class="icon icon-Espresso"></span>
-                    <a href="#" title="Kitchen Item">Giáo dục</a>
+                    <a href="/Category/GiaoDucPage" title="Kitchen Item">Giáo dục</a>
                 </div>
             </div>
         </div>
@@ -390,7 +160,7 @@
                 </div>
                 <div class="category-content">
                     <span class="icon icon-Phone"></span>
-                    <a href="#" title="Mobile & Tablets">Làm đẹp</a>
+                    <a href="/Category/LamDepPage" title="Mobile & Tablets">Làm đẹp</a>
                 </div>
             </div>
         </div>
@@ -405,24 +175,10 @@
                 </div>
                 <div class="category-content">
                     <span class="icon icon-DesktopMonitor"></span>
-                    <a href="#" title="Computers">Khác</a>
+                    <a href="/Home/CategoryPromotion" title="Computers">Khác</a>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-4 col-xs-6">
-            <div class="categorybox">
-                <div class="category-img">
-                    <img src="~/Content/images/categories6.jpg"
-                         alt="categories6"
-                         width="270"
-                         height="211" />
-                </div>
-                <div class="category-content">
-                    <span class="icon icon-House"></span>
-                    <a href="#" title="Furniture & Decor">... Khác</a>
-                </div>
-            </div>
-        </div>
+        </div>      
     </div>
     <div class="section-padding"></div>
 </div>

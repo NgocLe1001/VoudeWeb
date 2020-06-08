@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,6 +128,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Models\CATEGORY.cs" />
+    <Compile Include="Areas\Admin\Models\CODE.cs" />
+    <Compile Include="Areas\Admin\Models\CUSTOMER.cs" />
+    <Compile Include="Areas\Admin\Models\DETAIL_INVOICE.cs" />
+    <Compile Include="Areas\Admin\Models\INVOICE.cs" />
+    <Compile Include="Areas\Admin\Models\MyDBContext.cs" />
+    <Compile Include="Areas\Admin\Models\PARTNER.cs" />
+    <Compile Include="Areas\Admin\Models\PAYMENT_METHOD.cs" />
+    <Compile Include="Areas\Admin\Models\SHOP.cs" />
+    <Compile Include="Areas\Admin\Models\sysdiagram.cs" />
+    <Compile Include="Areas\Admin\Models\VOUCHER.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -196,8 +217,14 @@
     <Content Include="Content\images\latestblog1.jpg" />
     <Content Include="Content\images\latestblog2.jpg" />
     <Content Include="Content\images\latestblog3.jpg" />
+    <Content Include="Content\images\leetea-logo.jpg" />
+    <Content Include="Content\images\leetea.jpg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\marker.png" />
+    <Content Include="Content\images\MD-fitness-logo.jpg" />
+    <Content Include="Content\images\MD-fitness.jpg" />
+    <Content Include="Content\images\mon-hue-logo.jpg" />
+    <Content Include="Content\images\mon-hue.jpg" />
     <Content Include="Content\images\pagebanner-blog.jpg" />
     <Content Include="Content\images\pagebanner-blogpost.jpg" />
     <Content Include="Content\images\pagebanner-category.jpg" />
@@ -210,10 +237,14 @@
     <Content Include="Content\images\recentupdate2.jpg" />
     <Content Include="Content\images\recentupdate3.jpg" />
     <Content Include="Content\images\scisor.png" />
+    <Content Include="Content\images\sg-smile-logo.jpg" />
+    <Content Include="Content\images\sg-smile.jpg" />
     <Content Include="Content\images\shoptrading1.jpg" />
     <Content Include="Content\images\shoptrading2.jpg" />
     <Content Include="Content\images\shoptrading3.jpg" />
     <Content Include="Content\images\shoptrading4.jpg" />
+    <Content Include="Content\images\xuan-nhi-logo.jpg" />
+    <Content Include="Content\images\xuan-nhi.jpg" />
     <Content Include="Content\js\functions.js" />
     <Content Include="Content\js\html5\respond.min.js" />
     <Content Include="Content\js\jquery.min.js" />
@@ -246,6 +277,7 @@
     <Content Include="Content\libraries\strokegapicon\Stroke-Gap-Icons.eot" />
     <Content Include="Content\libraries\strokegapicon\Stroke-Gap-Icons.ttf" />
     <Content Include="Content\libraries\strokegapicon\Stroke-Gap-Icons.woff" />
+    <Content Include="Areas\Admin\Views\web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -275,9 +307,17 @@
     <Content Include="Views\Home\CouponsPage.cshtml" />
     <Content Include="Views\Home\DetailPromotion.cshtml" />
     <Content Include="Views\Home\CategoryPromotion.cshtml" />
+    <Content Include="Views\Category\AmThucPage.cshtml" />
+    <Content Include="Views\Category\MuaSamPage.cshtml" />
+    <Content Include="Views\Category\SucKhoePage.cshtml" />
+    <Content Include="Views\Category\DuLichPage.cshtml" />
+    <Content Include="Views\Category\GiaoDucPage.cshtml" />
+    <Content Include="Views\Category\LamDepPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
