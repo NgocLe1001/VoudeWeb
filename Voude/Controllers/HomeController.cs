@@ -49,6 +49,36 @@ namespace Voude.Controllers
             return View();
         }
 
-      
+        [HttpGet]
+        public ActionResult Login(CUSTOMER customer)
+        {
+            var result = myContext.CUSTOMERs.Where(c => (c.username == customer.username && c.password == customer.password)).FirstOrDefault();
+            if (result == null)
+            {
+                return RedirectToAction("Register", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+        }
+        [HttpPost]
+        public ActionResult RegisterCheck(CUSTOMER customer)
+        {
+            var result = myContext.CUSTOMERs.Where(c => c.username == customer.username).FirstOrDefault();
+            if (result == null)
+            {
+                myContext.CUSTOMERs.Add(customer);
+                myContext.SaveChanges(); // luu thay doi
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Register", "Home");
+            }
+        }
+
+
     }
 }
