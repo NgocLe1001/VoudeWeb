@@ -48,6 +48,11 @@ namespace Voude.Controllers
 
             return View();
         }
+        public ActionResult Cart()
+        {
+            return View();
+
+        }
 
         [HttpGet]
         public ActionResult Login(CUSTOMER customer)
