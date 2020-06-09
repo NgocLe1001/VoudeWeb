@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="~/Content/images/favicon.ico" />
+    <!-- For iPhone 4 Retina display: -->
+    <link rel="apple-touch-icon-precomposed"
+          sizes="114x114"
+          href="~/Content/images/apple-touch-icon-114x114-precomposed.png"
+    <!-- For iPad: -->
+    <link rel="apple-touch-icon-precomposed"
+          sizes="72x72"
+          href="~/Content/images/apple-touch-icon-72x72-precomposed.png" />
+    <!-- For iPhone: -->
+    <link rel="apple-touch-icon-precomposed"
+          href="~/Content/images/apple-touch-icon-57x57-precomposed.png" />
+    <!-- Library - Bootstrap v3.3.5 -->
+    <link rel="stylesheet" type="text/css" href="~/Content/libraries/lib.css" />
+    <!-- StrockGap Icon Fonts -->
+    <link rel="stylesheet"
+          type="text/css"
+          href="~/Content/libraries/strokegapicon/stroke-gap-icon.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Hind:400,500,600"
+          rel="stylesheet"
+          type="text/css" />
+
+    <!-- Custom - Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+</head>
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
+
+
+
+
+    <!-- LOADER -->
+    <div id="site-loader" class="load-complete">
+        <div class="loader">
+            <div class="loader-inner ball-triangle-path">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader /- -->
+    <!-- Header -->
+    <header class="header-main container-fluid no-padding">
+        <div class="menu-block">
+            <div class="menu-left-bg"></div>
+            <div class="container">
+                <!-- Navigation -->
+                <nav class="navbar ow-navigation">
+                    <div class="col-md-3 no-padding">
+                        <div class="navbar-header">
+                            <button aria-controls="navbar"
+                                    aria-expanded="false"
+                                    data-target="#navbar"
+                                    data-toggle="collapse"
+                                    class="navbar-toggle collapsed"
+                                    type="button">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a title="Logo" class="navbar-brand">
+                                <img src="~/Content/images/logo.png"
+                                     width="43"
+                                     height="51" /><span>Voude</span>
+
+                            </a>
+                            <a href="index.html" class="mobile-logo" title="Logo"><h3>Voude</h3></a>
+                        </div>
+                    </div>
+                    <div class="col-md-9 menuinner no-padding">
+                        <div class="navbar-collapse collapse" id="navbar">
+                            <ul class="nav navbar-nav menubar">
+                                <li class="active">
+                                    @Html.ActionLink("Trang chủ", "Index", "Home")
+
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Ưu đãi", "Index", "Home")
+
+                                    @*<a title="Deals" href="index.html#deal-section">Ưu đãi</a>*@
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Đối tác", "Index", "Home")
+
+                                    @*<a title="Shops" href="index.html#shopingbrands">Đối tác</a>*@
+                                </li>
+
+                                <li class="dropdown">
+                                    <a aria-expanded="false"
+                                       aria-haspopup="true"
+                                       role="button"
+                                       class="dropdown-toggle"
+                                       title="Categories"
+                                       href="#">Danh mục</a>
+                                    <i class="ddl-switch fa fa-angle-down"></i>
+                                    <ul class="dropdown-menu">
+
+                                        <li>
+                                            @Html.ActionLink("Ẩm thực", "CouponsPage", "Home")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Mua sắm", "CouponsPage", "Home")
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Sức khỏe", "CouponsPage", "Home")
+
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Du lịch", "CouponsPage", "Home")
+
+                                        </li>
+
+                                        <li>
+                                            @Html.ActionLink("Giáo dục", "CouponsPage", "Home")
+
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("Làm đẹp", "CouponsPage", "Home")
+
+                                        </li>
+
+                                        <li>
+                                            @Html.ActionLink("Khác", "CategoryPromotion", "Home")
+
+
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    @Html.ActionLink("Liên hệ", "Contact", "Home")
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Navigation /- -->
+                <div class="user-cart">
+
+                    <a href='@Url.Action("Register", "Home")' title="Đăng nhập / Đăng ký">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </a>
+
+
+                    <a href="@Url.Action("Cart", "Home")" title="Giỏ hàng của bạn">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header /- -->
+    
+
+
+    @RenderBody()
+
+
+
+    <!-- Footer Main -->
+    <footer class="footer-main container-fluid no-padding">
+        <div class="footer-main-block">
+            <!-- Container -->
+            <div class="container">
+                <div class="row">
+                    <!-- Support Center -->
+                    <aside class="col-md-2 col-sm-6 col-xs-6 ftr-widget widget_support">
+                        <h3 class="widget-title">Hỗ trợ</h3>
+                        <ul>
+                            <li>
+                                <a title="Using a Coupon" href="#">Bạn muốn lấy vouchers?</a>
+                            </li>
+
+                            <li>
+                                <a title="Merchant Help" href="#">Đội ngũ kĩ thuật viên</a>
+                            </li>
+                        </ul>
+                    </aside>
+                    <!-- Support Center /- -->
+                    <!-- Speical Pages -->
+                    <aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget widget_pages">
+                        <h3 class="widget-title">Ưu đãi của năm</h3>
+                        <ul>
+                            <li>
+                                <a title="Black Friday Deals" href="#">Black Friday </a>
+                            </li>
+                            <li>
+                                <a title="Cyber Monday Deals" href="#">Giáng sinh</a>
+                            </li>
+                            <li><a title="Christmas Sales" href="#">Tết nguyên đán</a></li>
+                            <li><a title="Free Shipping" href="#">Miễn phí ship</a></li>
+                        </ul>
+                    </aside>
+                    <!-- Speical Pages /- -->
+                    <!-- ContactUs -->
+                    <aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget widget_contactus">
+                        <h3 class="widget-title">Liên hệ</h3>
+                        <div class="contactinfo-box">
+                            <i class="fa fa-map-marker"></i>
+                            <p>số 10 Đông Ngac, Bắc Từ Liêm, Hà Nội</p>
+                        </div>
+                        <div class="contactinfo-box">
+                            <i class="fa fa-phone"></i>
+                            <p>
+                                <a title="0112345678" href="tel:+0112345678">+84 969 936 789</a>
+                                <a title="0112355689" href="tel:+0112355689">+84 456 123 789</a>
+                            </p>
+                        </div>
+                        <div class="contactinfo-box">
+                            <i class="fa fa-map-marker"></i>
+                            <p>
+                                <a href="mailto:xyz123@testing.com" title="Info@OurDomain.Com">baongochieuhuy@gmail.Com</a>
+                                <a href="mailto:xyz123@testing.com"
+                                   title="Support@OurDomain.Com">muabanvoucher@gmail.Com</a>
+                            </p>
+                        </div>
+                    </aside>
+                    <!-- ContactUs /- -->
+                    <!-- NewsLetter Widget -->
+                    <aside class="col-md-4 col-sm-6 col-xs-6 ftr-widget widget_newsletter">
+                        <h3 class="widget-title">Đăng ký làm đối tác</h3>
+                        <p>
+                            Bằng việc đăng ký làm đối tác, bạn đã chấp nhận Chính sách và
+                            Điều khoản của chúng tôi
+                        </p>
+                        <div class="input-group">
+                            <input type="text"
+                                   placeholder="Nhập email"
+                                   class="form-control" />
+                            <span class="input-group-btn">
+                                <button type="button" title="Subscribe" class="btn">
+                                    Đăng ký
+                                </button>
+                            </span>
+                        </div>
+                    </aside>
+                    <!-- NewsLetter Widget /- -->
+                </div>
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+
+                </div>
+                <div class="footer-about">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12 ftr-about">
+                            <!-- <h3 class="widget-title">About Us</h3> -->
+                            <p>
+                                VOUDE là nơi bạn có thể mua bán, trao đổi các voucher ưu
+                                đãi trong rất nhiều lĩnh vực: Ẩm thực, mua sắm, sức khỏe, giáo dục, du lịch cùng hàng ngàn ưu đãi khác giúp cuộc sống của bạn thêm ý nghĩa hơn !
+                            </p>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 ftr-social">
+
+                            <ul>
+                                <li>
+                                    <a title="Facebook" data-toggle="tooltip" href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a title="Twitter" data-toggle="tooltip" href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a title="Google Plus" data-toggle="tooltip" href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a title="Linkedin" data-toggle="tooltip" href="#">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a title="Dribbble" data-toggle="tooltip" href="#">
+                                        <i class="fa fa-dribbble"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a title="Pinterest" data-toggle="tooltip" href="#">
+                                        <i class="fa fa-pinterest-p"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  Footer Bottom /- -->
+        </div>
+        <!-- Container /- -->
+
+        <div class="copyright">
+            <div class="container">
+                <p>Copyright &copy; 2016 - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer /- -->
+    <!-- JQuery v1.11.3 -->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <!--script src="js/jquery.knob.js"></script-->
+    <!-- Library - Js -->
+    <script src="~/Content/libraries/lib.js"></script>
+    <!-- Bootstrap JS File v3.3.5 -->
+    <!-- Library - Google Map API -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+    <!-- Library - Theme JS -->
+    <script src="~/Content/js/functions.js"></script>
+
+</body>
+</html>

@@ -8,6 +8,44 @@
 <div class="container featuredsignup">
     <div class="section-padding"></div>
     <div class="row">
+        <div class="section-header">
+            <h3>ĐĂNG NHẬP</h3>
+        </div>
+        <form class="loginform" method="get" action="/Home/Login/">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-6">
+                    <div class="form-group">
+                        <input type="text"
+                               required=""
+                               class="form-control"
+                               id="input_nameDN"
+                               placeholder="Tên đăng nhập" 
+                               name="username"/>
+                    </div>
+
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-6">
+                    <div class="form-group">
+                        <input type="password"
+                               class="form-control"
+                               id="input_MKDN"
+                               placeholder="Mật khẩu"
+                               name="password"/>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-6">
+                    <div class="form-group">
+                        <input type="submit"
+                               value="Đăng nhập"
+                               id="btn_submit_DN"
+                               title="Đăng nhập" />
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div class="row">
         <div class="col-md-7">
             <div class="featured-section">
                 <div class="section-header">
@@ -37,7 +75,7 @@
                     <h3>Đăng ký tại đây</h3>
                     <!-- <p>Today's hot deals handpicked by our Team up!</p> -->
                 </div>
-                <form class="signupform">
+                <form class="signupform" method="post" action="/Home/RegisterCheck/">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-6">
                             <div class="form-group">
@@ -45,7 +83,8 @@
                                        required=""
                                        class="form-control"
                                        id="input_name"
-                                       placeholder="Họ và tên*" />
+                                       placeholder="Họ và tên*"
+                                       name="name" />
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-6">
@@ -54,7 +93,8 @@
                                        required=""
                                        class="form-control"
                                        id="input_email"
-                                       placeholder="Email *" />
+                                       placeholder="Email *"
+                                       name="email" />
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-6">
@@ -62,34 +102,37 @@
                                 <input type="text"
                                        class="form-control"
                                        id="input_unm"
-                                       placeholder="Tên đăng nhập" />
+                                       placeholder="Tên đăng nhập"
+                                       name="username" />
                             </div>
                         </div>
                         <!-- <div class="col-md-5 col-xs-6">
-                          <a href="#" title="Check Availability">Check Availability</a>
-                        </div> -->
+      <a href="#" title="Check Availability">Check Availability</a>
+    </div> -->
                         <div class="col-md-12 col-sm-12 col-xs-6">
                             <div class="form-group">
                                 <input type="password"
                                        class="form-control"
                                        id="input_pwd"
-                                       placeholder="Mật khẩu" />
+                                       placeholder="Mật khẩu"
+                                       name="password" />
                             </div>
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-6">
-                            <div class="form-group">
-                                <input type="password"
-                                       class="form-control"
-                                       id="input_cfmpwd"
-                                       placeholder="Xác nhận mật khẩu" />
-                            </div>
-                        </div>
+                        @*<div class="col-md-12 col-sm-12 col-xs-6">
+            <div class="form-group">
+                <input type="password"
+                       class="form-control"
+                       id="input_cfmpwd"
+                       placeholder="Xác nhận mật khẩu"
+                       name="password"/>
+            </div>
+        </div>*@
+                   
                         <div class="col-md-12 col-sm-12 col-xs-6">
                             <div class="form-group">
                                 <input type="submit"
-                                       value="Đăng ký!"
-                                       id="btn_submit"
-                                       title="Đăng  ký" />
+                                       value="Đăng ký"
+                                       title="Đăng ký" />
                             </div>
                         </div>
                     </div>

@@ -77,3 +77,7 @@ C:\Users\tung\Documents\NGOC_REACT_NATIVE\SEMEMESTER_6th\CONG_NGHE_WEB\SourceCod
 C:\Users\tung\Documents\NGOC_REACT_NATIVE\SEMEMESTER_6th\CONG_NGHE_WEB\SourceCode\Voude\Voude\obj\Debug\Voude.csproj.CopyComplete
 C:\Users\tung\Documents\NGOC_REACT_NATIVE\SEMEMESTER_6th\CONG_NGHE_WEB\SourceCode\Voude\Voude\obj\Debug\Voude.dll
 C:\Users\tung\Documents\NGOC_REACT_NATIVE\SEMEMESTER_6th\CONG_NGHE_WEB\SourceCode\Voude\Voude\obj\Debug\Voude.pdb
+C:\Users\tung\Documents\NGOC_REACT_NATIVE\SEMEMESTER_6th\CONG_NGHE_WEB\SourceCode\Voude\Voude\bin\EntityFramework.dll
+C:\Users\tung\Documents\NGOC_REACT_NATIVE\SEMEMESTER_6th\CONG_NGHE_WEB\SourceCode\Voude\Voude\bin\EntityFramework.SqlServer.dll
+C:\Users\tung\Documents\NGOC_REACT_NATIVE\SEMEMESTER_6th\CONG_NGHE_WEB\SourceCode\Voude\Voude\bin\EntityFramework.xml
+C:\Users\tung\Documents\NGOC_REACT_NATIVE\SEMEMESTER_6th\CONG_NGHE_WEB\SourceCode\Voude\Voude\bin\EntityFramework.SqlServer.xml
