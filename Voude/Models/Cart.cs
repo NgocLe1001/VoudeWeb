@@ -43,20 +43,71 @@ namespace Voude.Models
             }
 
         }
-        public void DistractItem(VOUCHER voucher, int quantity)
+        public void IncreaseItem(int id)
         {
             CartItem line = lineCollection
-                .Where(p => p.Voucher.id == voucher.id)
+                .Where(p => p.Voucher.id == id)
                 .FirstOrDefault();
 
-            if (line.Quantity > 0)
+            if (line == null)
             {
-                line.Quantity -= quantity;
+                //lineCollection.Add(new CartItem(voucher, quantity));
+            }
+            else
+            {
+                line.Quantity++;
+
             }
 
+        }
+        public void DecreaseItem(int id)
+        {
+            CartItem line = lineCollection
+                .Where(p => p.Voucher.id == id)
+                .FirstOrDefault();
+
+            if (line == null)
+            {
+                //lineCollection.Add(new CartItem(voucher, quantity));
+            }
+            else
+            {
+                if (line.Quantity > 0)
+                {
+                    line.Quantity--;
+                }
+                else
+                {
+                    lineCollection.RemoveAll(l => l.Voucher.id ==id);
+                }
+
+
+            }
 
         }
-        public void DeleteItem(VOUCHER voucher)
+        public void UpdateItem(VOUCHER vc, int quantity)
+        {
+            CartItem line = lineCollection
+                .Where(p => p.Voucher.id == vc.id)
+                .FirstOrDefault();
+
+            if (line != null)
+            {
+                if (quantity > 0)
+                {
+                    line.Quantity = quantity;
+                }
+                else
+                {
+                    lineCollection.RemoveAll(l => l.Voucher.id == vc.id);
+                }
+            }
+        }
+
+
+
+
+        public void RemoveLine(VOUCHER voucher)
         {
             lineCollection.RemoveAll(l => l.Voucher.id == voucher.id);
         }
@@ -65,9 +116,18 @@ namespace Voude.Models
             return lineCollection.Sum(e => System.Convert.ToInt32(e.Voucher.price) * e.Quantity);
 
         }
+        public int? ComputeTotalProduct()
+        {
+            return lineCollection.Sum(e => e.Quantity);
+
+        }
         public void Clear()
         {
             lineCollection.Clear();
+        }
+        public IEnumerable<CartItem> Lines
+        {
+            get { return lineCollection; }
         }
     }
 }

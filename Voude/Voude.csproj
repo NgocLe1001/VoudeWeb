@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -224,6 +225,11 @@
     <Content Include="Content\images\pagebanner-coupans.jpg" />
     <Content Include="Content\images\pagebanner-error.jpg" />
     <Content Include="Content\images\pagebanner-register.jpg" />
+    <Content Include="Content\images\pahue1.jpg" />
+    <Content Include="Content\images\paleetee1.jpg" />
+    <Content Include="Content\images\paspa1.jpg" />
+    <Content Include="Content\images\pavinhsang1.jpg" />
+    <Content Include="Content\images\paxuannhi.jpg" />
     <Content Include="Content\images\photoslider1.jpg" />
     <Content Include="Content\images\recentupdate1.jpg" />
     <Content Include="Content\images\recentupdate2.jpg" />
@@ -295,10 +301,17 @@
     <Content Include="Views\Home\DetailPromotion.cshtml" />
     <Content Include="Views\Home\CategoryPromotion.cshtml" />
     <Content Include="Views\Home\Cart.cshtml" />
-    <Content Include="Views\Shared\_LayoutShortHeader.cshtml" />
+    <Content Include="Views\Category\AmThucPage.cshtml" />
+    <Content Include="Views\Category\MuaSamPage.cshtml" />
+    <Content Include="Views\Category\SucKhoePage.cshtml" />
+    <Content Include="Views\Category\DuLichPage.cshtml" />
+    <Content Include="Views\Category\GiaoDucPage.cshtml" />
+    <Content Include="Views\Category\LamDepPage.cshtml" />
+    <Content Include="Views\Home\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

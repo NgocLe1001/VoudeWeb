@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "GiaoDucPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Voude.Models;
+<div class="container deal-section">
+    <div class="section-padding"></div>
+    <div class="section-header">
+        <h3>Giáo dục</h3>
+        <!-- <p>
+          Today's hot deals handpicked by our Team. Hurry up before they run
+          out!
+        </p> -->
+    </div>
+    <div class="row">
+        @foreach (VOUCHER vc in (ViewBag.GiaoDuc as IEnumerable<VOUCHER>))
+        {
+            <div class="col-md-4 col-sm-6 col-xs-6">
+                <div class="dealbox">
+                    <div class="deal-thmbimg">
+                        <img src="@vc.images"
+                             width="370"
+                             height="247"
+                             alt="@vc.alt" />
+                        <p>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i><span>@vc.percent</span>
+                        </p>
+                    </div>
+                    <div class="deal-content">
+                        <h3>@vc.name</h3>
+
+                        <a href="@Url.Action("AddItem","Category",new {  @idVoucher = vc.id })" title="Lấy ngay" class="getdeal-btn">
+                            <span class="get-coupencode">12xjuox</span>
+                            <span class="getdeal">Lấy ngay</span>
+                        </a>
+                        <div class="expire"><span>Hạn sử dụng :</span> @vc.endDate</div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    <div class="section-padding"></div>
+</div>
+<div class="section-padding"></div>
+

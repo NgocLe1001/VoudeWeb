@@ -1,0 +1,90 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using Voude.Models;
+@model Cart
+<div class="content">
+    <div class="section group" style="margin-top: 30px; margin-bottom: 50px">
+        <div class="process-wrap">
+            <div class="process text-center active">
+                <p><span>01</span></p>
+                <h3>Giỏ hàng</h3>
+            </div>
+            <div class="process text-center active">
+                <p><span>02</span></p>
+                <h3>Xác nhận</h3>
+            </div>
+            <div class="process text-center">
+                <p><span>03</span></p>
+                <h3>Hoàn tất đặt hàng</h3>
+            </div>
+        </div>
+    </div>
+    <div class="section group">
+
+
+        <div class="col span_2_of_3">
+
+            <div class="company_address">
+                <h2>GIỎ HÀNG</h2>
+                <div class="cart">
+                    <table class="table table-cart-total">
+                        @foreach (CartItem it in Model.Lines)
+                        {
+                            <tr>
+                                <td><p style="margin-top: 20px">@it.Quantity x</p></td>
+                                <td>
+
+
+                                    <img src="@it.Voucher.images"
+                                         width="80"
+                                         height="180"
+                                         alt="@it.Voucher.alt" />
+                                    <p> @it.Voucher.name</p>
+
+                                </td>
+                                @*<td>@it.Quantity x @it.Voucher.name</td>*@
+                                <td class="text-right">@((it.Quantity*it.Voucher.price.GetValueOrDefault()).ToString("N0")) VNĐ</td>
+                            </tr>
+                        }
+                    </table>
+                    <div class="text-right">
+                        <span class="text-right">Tổng: </span> <span style="color: red">@Model.ComputeTotalValue().GetValueOrDefault().ToString("N0") VNĐ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col span_1_of_3">
+            <div class="contact-form">
+                <h2>NGƯỜI ĐẶT HÀNG</h2>
+                <form method="post">
+                    <div>
+                        <span><label>Họ tên</label></span>
+                        <span><input type="text" class="textbox" name="Hoten"></span>
+                    </div>
+                    <div>
+                        <span><label>Địa chỉ</label></span>
+                        <span><input type="text" class="textbox" name="Diachi"></span>
+                    </div>
+                    <div>
+                        <span><label>Điện thoại</label></span>
+                        <span><input type="text" class="textbox" name="Dienthoai"></span>
+                    </div>
+                    <div>
+                        <span><label>Email</label></span>
+                        <span><input type="text" class="textbox" name="Email"></span>
+                    </div>
+                    <div>
+                        <span><label>Yêu cầu khác</label></span>
+                        <span><textarea name="Ghichu"> </textarea></span>
+                    </div>
+                    <div>
+                        <span><input type="submit" value="Mua hàng" class="myButton"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

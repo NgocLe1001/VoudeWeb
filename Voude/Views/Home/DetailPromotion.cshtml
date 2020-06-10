@@ -1,18 +1,23 @@
 ﻿
 @{
-    ViewBag.Title = "DetailPromotion";
+    ViewBag.Title = "Chi tiết ưu đãi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using Voude.Models;
 
+@model VOUCHER
+
+<!-- Blog -->
 <!-- Blog -->
 <div class="container blog blogpost">
     <div class="section-padding"></div>
     <div class="row">
+
         <div class="col-md-9 col-sm-8 content-area">
             <article class="type-post">
                 <div class="entry-cover">
-                    <img src="~/Content/images/blogpost.jpg"
-                         alt="blogpost"
+                    <img src="@Model.images"
+                         alt="@Model.alt"
                          width="820"
                          height="410" />
                     <div class="entrycover-shape"></div>
@@ -20,175 +25,26 @@
                 </div>
                 <div class="entrycontent-block">
                     <div class="entry-meta">
-                        <div class="post-date">07 Tháng 11 2020</div>
+                        <div class="post-date">@Model.startDate</div>
                     </div>
                     <h3 class="entry-title">
-                        Thời trang Huy hoàng - thế giới âu phục
+                        @Model.name
                     </h3>
                     <div class="entry-content">
-                        <p>
-                            Khi muốn thoải mái và phóng khoáng lúc tới văn phòng làm việc,
-                            các cô gái hãy diện áo sơ mi với quần ống rộng. Với công thức
-                            phối đồ này, chị em có thể tự tin thể hiện bản thân mà không
-                            cần phải mất nhiều thời gian lên ý tưởng cầu kỳ cho trang
-                            phục. Khi muốn thoải mái và phóng khoáng lúc tới văn phòng làm
-                            việc, các cô gái hãy diện áo sơ mi với quần ống rộng. Với công
-                            thức phối đồ này, chị em có thể tự tin thể hiện bản thân mà
-                            không cần phải mất nhiều thời gian lên ý tưởng cầu kỳ cho
-                            trang phục.
-                        </p>
-                        <p>
-                            Đây là outfit giúp các quý cô “hack” tuổi hết sức hiệu quả.
-                            Chiếc áo sơ mi có phần cổ điển, đứng đắn kết hợp với sự dễ
-                            thương, đáng yêu của quần yếm sẽ đem đến sự mới lạ cho phong
-                            cách thời trang công sở của các cô gái. Đây là outfit giúp các
-                            quý cô “hack” tuổi hết sức hiệu quả. Chiếc áo sơ mi có phần cổ
-                            điển, đứng đắn kết hợp với sự dễ thương, đáng yêu của quần yếm
-                            sẽ đem đến sự mới lạ cho phong cách thời trang công sở của các
-                            cô gái.
-                        </p>
-                        <p>
-                            Với chị em công sở, chân váy midi là một trong những item được
-                            ưu tiên hàng đầu vì sự kín đáo và nhã nhặn mà nó đem đến cho
-                            người mặc. Ngoài ra, chân váy dáng suông cũng rất dễ phối đồ.
-                            Bộ đôi áo sơ mi cùng chân váy midi sẽ là sự lựa chọn phù hợp
-                            với những quý cô theo phong cách cổ điển, thanh lịch. Với chị
-                            em công sở, chân váy midi là một trong những item được ưu tiên
-                            hàng đầu vì sự kín đáo và nhã nhặn mà nó đem đến cho người
-                            mặc. Ngoài ra, chân váy dáng suông cũng rất dễ phối đồ. Bộ đôi
-                            áo sơ mi cùng chân váy midi sẽ là sự lựa chọn phù hợp với
-                            những quý cô theo phong cách cổ điển, thanh lịch.
-                        </p>
-                        <div class="shopingbrands">
-                            <div class="row">
-                                <div class="col-md-3 col-sm-6 col-xs-3">
-                                    <div class="brandbox">
-                                        <img src="~/Content/images/brand2.jpg"
-                                             alt="brand2"
-                                             width="178"
-                                             height="100" />
-                                        <a href="#" title="Amazon" class="brand-content">
-                                            <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>tổng hóa đơn</span>
+                        <p> @Model.description </p>
+                        <b>Địa chỉ áp dụng :</b>
+                        <div>
+                            <ul>
+                                @foreach (SHOP shop in (ViewBag.DC as IEnumerable<SHOP>))
+                                {
+                                    <li>
+                                        <a href="#">
+                                            @shop.address
                                         </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 col-xs-3">
-                                    <div class="brandbox">
-                                        <img src="~/Content/images/brand5.jpg"
-                                             alt="brand5"
-                                             width="178"
-                                             height="100" />
-                                        <a href="#" title="BestBuy" class="brand-content">
-                                            <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>tổng hóa đơn</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 col-xs-3">
-                                    <div class="brandbox">
-                                        <img src="~/Content/images/brand3.jpg"
-                                             alt="brand3"
-                                             width="178"
-                                             height="100" />
-                                        <a href="#" title="JcPenney" class="brand-content">
-                                            <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>tổng hóa đơn</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 col-xs-3">
-                                    <div class="brandbox">
-                                        <img src="~/Content/images/brand4.jpg"
-                                             alt="brand4"
-                                             width="178"
-                                             height="100" />
-                                        <a href="#" title="ebay" class="brand-content">
-                                            <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>tổng hóa đơn</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 col-xs-3">
-                                    <div class="brandbox">
-                                        <img src="~/Content/images/brand7.jpg"
-                                             alt="brand7"
-                                             width="178"
-                                             height="100" />
-                                        <a href="#" title="Puma" class="brand-content">
-                                            <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>tổng hóa đơn</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 col-xs-3">
-                                    <div class="brandbox">
-                                        <img src="~/Content/images/brand8.jpg"
-                                             alt="brand8"
-                                             width="178"
-                                             height="100" />
-                                        <a href="#" title="Esprit" class="brand-content">
-                                            <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>tổng hóa đơn</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 col-xs-3">
-                                    <div class="brandbox">
-                                        <img src="~/Content/images/brand9.jpg"
-                                             alt="brand9"
-                                             width="178"
-                                             height="100" />
-                                        <a href="#" title="Lacoste" class="brand-content">
-                                            <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>tổng hóa đơn</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 col-xs-3">
-                                    <div class="brandbox">
-                                        <img src="~/Content/images/brand10.jpg"
-                                             alt="brand10"
-                                             width="178"
-                                             height="100" />
-                                        <a href="#" title="Mexx" class="brand-content">
-                                            <span>Tiết kiệm đến</span><span class="off-per">3.7%</span><span>tổng hóa đơn</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                                    </li>
+                                }
+                            </ul>
                         </div>
-                        <p>
-                            Với chị em công sở, chân váy midi là một trong những item được
-                            ưu tiên hàng đầu vì sự kín đáo và nhã nhặn mà nó đem đến cho
-                            người mặc. Ngoài ra, chân váy dáng suông cũng rất dễ phối đồ.
-                            Bộ đôi áo sơ mi cùng chân váy midi sẽ là sự lựa chọn phù hợp
-                            với những quý cô theo phong cách cổ điển, thanh lịch. Với chị
-                            em công sở, chân váy midi là một trong những item được ưu tiên
-                            hàng đầu vì sự kín đáo và nhã nhặn mà nó đem đến cho người
-                            mặc. Ngoài ra, chân váy dáng suông cũng rất dễ phối đồ. Bộ đôi
-                            áo sơ mi cùng chân váy midi sẽ là sự lựa chọn phù hợp với
-                            những quý cô theo phong cách cổ điển, thanh lịch.
-                        </p>
-                        <div class="entry-thumbnail">
-                            <img width="345"
-                                 height="276"
-                                 src="~/Content/images/blogpost-thumb.jpg"
-                                 alt="blogpost-thumb" />
-                            <p>
-                                Với chị em công sở, chân váy midi là một trong những item
-                                được ưu tiên hàng đầu vì sự kín đáo và nhã nhặn mà nó đem
-                                đến cho người mặc. Ngoài ra, chân váy dáng suông cũng rất dễ
-                                phối đồ. Bộ đôi áo sơ mi cùng chân váy midi sẽ là sự lựa
-                                chọn phù hợp với những quý cô theo phong cách cổ điển, thanh
-                                lịch. Với chị em công sở, chân váy midi là một trong những
-                                item được ưu tiên hàng đầu vì sự kín đáo và nhã nhặn mà nó
-                                đem đến cho người mặc. Ngoài ra, chân váy dáng suông cũng
-                                rất dễ phối đồ. Bộ đôi áo sơ mi cùng chân váy midi sẽ là sự
-                                lựa chọn phù hợp với những quý cô theo phong cách cổ điển,
-                                thanh lịch.
-                            </p>
-                        </div>
-                        <p>
-                            Với chị em công sở, chân váy midi là một trong những item được
-                            ưu tiên hàng đầu vì sự kín đáo và nhã nhặn mà nó đem đến cho
-                            người mặc. Ngoài ra, chân váy dáng suông cũng rất dễ phối đồ.
-                            Bộ đôi áo sơ mi cùng chân váy midi sẽ là sự lựa chọn phù hợp
-                            với những quý cô theo phong cách cổ điển, thanh lịch.
-                        </p>
                     </div>
                     <div class="entrymeta-block">
                         <div class="post-by">
@@ -196,9 +52,6 @@
                         </div>
                         <div class="post-like">
                             <a href="#" title="10 Like"><span class="icon icon-Heart"></span> 10 Lượt thích</a>
-                        </div>
-                        <div class="post-comment">
-                            <a href="#" title="20 Comments"><span class="icon icon-Message"></span> 20 Bình luận</a>
                         </div>
                         <div class="post-share">
                             <span class="icon icon-Share"></span>Chia sẻ
@@ -228,118 +81,9 @@
                     </div>
                 </div>
             </article>
-            <div class="comment-section">
-                <h3 class="section-heading">Bình luận<span>(3)</span></h3>
-                <ul class="media-list">
-                    <li class="media">
-                        <div class="media-left">
-                            <a href="#" title="Xuân Híu">
-                                <img src="~/Content/images/comment1.jpg"
-                                     alt="comment"
-                                     width="86"
-                                     height="86" />
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <div class="media-content">
-                                <h4 class="media-heading">
-                                    Xuân Híu<span>08 T12 - 2020</span>
-                                </h4>
-                                <p>
-                                    Với chị em công sở, chân váy midi là một trong những item
-                                    được ưu tiên hàng đầu vì sự kín đáo và nhã nhặn mà nó đem
-                                    đến cho người mặc. Ngoài ra, chân váy dáng suông cũng rất
-                                    dễ phối đồ. Bộ đôi áo sơ mi cùng chân váy midi sẽ là sự
-                                    lựa chọn phù hợp với những quý cô theo phong cách cổ điển,
-                                    thanh lịch.
-                                </p>
-                                <a href="#" title="Reply"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="media media-even">
-                        <div class="media-left">
-                            <a href="#" title="Thái Bảo">
-                                <img src="~/Content/images/comment2.jpg"
-                                     alt="comment"
-                                     width="86"
-                                     height="86" />
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <div class="media-content">
-                                <h4 class="media-heading">
-                                    Thái Bảo<span>08 T12 - 2020</span>
-                                </h4>
-                                <p>
-                                    Với chị em công sở, chân váy midi là một trong những item
-                                    được ưu tiên hàng đầu vì sự kín đáo và nhã nhặn mà nó đem
-                                    đến cho người mặc. Ngoài ra, chân váy dáng suông cũng rất
-                                    dễ phối đồ. Bộ đôi áo sơ mi cùng chân váy midi sẽ là sự
-                                    lựa chọn phù hợp với những quý cô theo phong cách cổ điển,
-                                    thanh lịch.
-                                </p>
-                                <a href="#" title="Reply"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <div class="media-left">
-                            <a href="#" title="Quang Huy">
-                                <img src="~/Content/images/comment3.jpg"
-                                     alt="comment"
-                                     width="86"
-                                     height="86" />
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <div class="media-content">
-                                <h4 class="media-heading">
-                                    Quang Huy<span>12 T1 - 2016</span>
-                                </h4>
-                                <p>
-                                    Với chị em công sở, chân váy midi là một trong những item
-                                    được ưu tiên hàng đầu vì sự kín đáo và nhã nhặn mà nó đem
-                                    đến cho người mặc. Ngoài ra, chân váy dáng suông cũng rất
-                                    dễ phối đồ. Bộ đôi áo sơ mi cùng chân váy midi sẽ là sự
-                                    lựa chọn phù hợp với những quý cô theo phong cách cổ điển,
-                                    thanh lịch.
-                                </p>
-                                <a href="#" title="Reply"><i class="fa fa-reply" aria-hidden="true"></i>Reply</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="comment-form">
-                <h3>Bình luận</h3>
-                <form class="row">
-                    <div class="form-group col-md-6">
-                        <input type="text"
-                               required=""
-                               placeholder="Họ và tên *"
-                               class="form-control" />
-                    </div>
-                    <div class="form-group col-md-6">
-                        <input type="text"
-                               required=""
-                               placeholder="Email *"
-                               class="form-control" />
-                    </div>
-                    <div class="form-group col-md-12">
-                        <textarea placeholder="Bình luận của bạn *"
-                                  rows="8"
-                                  class="form-control"></textarea>
-                    </div>
-                    <div class="form-group col-md-12">
-                        <input type="submit"
-                               title="Submit"
-                               value="Đăng"
-                               name="submit" />
-                    </div>
-                </form>
-            </div>
+
         </div>
+
         <div class="col-md-3 col-sm-4 widget-area">
             <aside class="widget widget-search">
                 <div class="input-group">
@@ -355,105 +99,48 @@
                 <h3 class="widget-title">Ưu đãi khác</h3>
                 <ul>
                     <li>
-                        <a href="#" title="Food & Restaurant">Ẩm thực<span>09</span></a>
+                        <a href='@Url.Action("AmThucPage", "Category")' title="Food & Restaurant">Ẩm thực<span>@ViewBag.AT</span></a>
                     </li>
                     <li>
-                        <a href="#" title="Business Circle">Du Lịch<span>10</span></a>
+                        <a href='@Url.Action("MuaSamPage", "Category")' title="Business Circle">Mua Sắm<span>@ViewBag.MS</span></a>
                     </li>
                     <li>
-                        <a href="#" title="Shopping Directory">Mua sắm<span>07</span></a>
+                        <a href='@Url.Action("SucKhoePage", "Category")' title="Shopping Directory">Sức Khỏe<span>@ViewBag.SK</span></a>
                     </li>
                     <li>
-                        <a href="#" title="Travel and Tourism">Giáo dục<span>11</span></a>
+                        <a href='@Url.Action("DuLichPage", "Category")' title="Travel and Tourism">Du Lịch<span>@ViewBag.DL</span></a>
                     </li>
                     <li>
-                        <a href="#" title="Financial Services">Giải trí<span>13</span></a>
+                        <a href='@Url.Action("GiaoDucPage", "Category")' title="Financial Services">Giáo Dục<span>@ViewBag.GD</span></a>
                     </li>
                     <li>
-                        <a href="#" title="Automotive Section">Xe hơi<span>07</span></a>
+                        <a href='@Url.Action("LamDepPage", "Category")' title="Automotive Section">Làm Đẹp<span>@ViewBag.LD</span></a>
                     </li>
                 </ul>
             </aside>
             <aside class="widget widget-latestposts">
-                <h3 class="widget-title">Recent Updates</h3>
-                <div class="latest-block">
-                    <div class="latest-content">
-                        <a href="blogpost-page.html">
-                            <img src="~/Content/images/recentupdate1.jpg"
-                                 alt="recentupdate1"
-                                 width="72"
-                                 height="77" />
-                        </a>
-                        <h3>
-                            <a href="blogpost-page.html"
-                               title="Goodness lemur save much alas crud dear">Giảm giá bất ngờ nhất từ trước tới nay</a>
-                        </h3>
-                        <span>09 T10 2030</span>
+                <h3 class="widget-title">SẢN PHẨM CÙNG LOẠI</h3>
+                @foreach (VOUCHER vc in (ViewBag.SPCL as IEnumerable<VOUCHER>))
+                {
+                    <div class="latest-block">
+                        <div class="latest-content">
+                            <a href="/Home/DetailPromotion/@vc.id">
+                                <img src="@vc.images"
+                                     alt="@vc.alt"
+                                     width="72"
+                                     height="77" />
+                            </a>
+                            <h3>
+                                <a href="/Home/DetailPromotion/@vc.id"
+                                   title="@vc.alt">@vc.name</a>
+                            </h3>
+                            <span>@vc.endDate</span>
+                        </div>
                     </div>
-                    <div class="latest-content">
-                        <a href="blogpost-page.html">
-                            <img src="~/Content/images/recentupdate2.jpg"
-                                 alt="recentupdate2"
-                                 width="72"
-                                 height="77" />
-                        </a>
-                        <h3>
-                            <a href="blogpost-page.html"
-                               title="However much enor mous merrily jeez">Giảm giá bất ngờ nhất từ trước tới nay</a>
-                        </h3>
-                        <span>22 T11 2020</span>
-                    </div>
-                    <div class="latest-content">
-                        <a href="blogpost-page.html">
-                            <img src="~/Content/images/recentupdate3.jpg"
-                                 alt="recentupdate3"
-                                 width="72"
-                                 height="77" />
-                        </a>
-                        <h3>
-                            <a href="blogpost-page.html"
-                               title="Flinched more mam moth this pomper">Giảm giá bất ngờ nhất từ trước tới nay</a>
-                        </h3>
-                        <span>04 t12 2021</span>
-                    </div>
-                </div>
+                }
+
             </aside>
-            <!-- <aside class="widget widget-catagories widget-archives">
-              <h3 class="widget-title">Archives</h3>
-              <ul>
-                <li>
-                  <a href="#" title="November">November 2015<span>15</span></a>
-                </li>
-                <li>
-                  <a href="#" title="October">October 2015<span>08</span></a>
-                </li>
-                <li>
-                  <a href="#" title="September">September 2015<span>25</span></a>
-                </li>
-                <li>
-                  <a href="#" title="August">August 2015<span>18</span></a>
-                </li>
-                <li>
-                  <a href="#" title="July">July 2015<span>22</span></a>
-                </li>
-                <li>
-                  <a href="#" title="June">June 2015<span>06</span></a>
-                </li>
-              </ul>
-            </aside>
-            <aside class="widget widget-tag">
-              <h3 class="widget-title">Populer tags</h3>
-              <div class="tags">
-                <a href="#" title="Fashion">Fashion</a>
-                <a href="#" title="Discount">Discount</a>
-                <a href="#" title="Food">Food</a>
-                <a href="#" title="Home Tools">Home Tools</a>
-                <a href="#" title="Sale">Sale</a>
-                <a href="#" title="Movies">Movies</a>
-                <a href="#" title="Technology">Technology</a>
-                <a href="#" title="Photography">Photography</a>
-              </div>
-            </aside> -->
+
         </div>
     </div>
     <div class="section-padding"></div>
