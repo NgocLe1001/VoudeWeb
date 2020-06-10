@@ -33,9 +33,20 @@ namespace Voude.Controllers
         {
             return View();
         }
-        public ActionResult DetailPromotion()
+        public ActionResult DetailPromotion(long id)
         {
-            return View();
+            var amthuc = myContext.VOUCHERs.Count(x => x.categoryId == 1);ViewBag.AT = amthuc;
+            var muasam = myContext.VOUCHERs.Count(x => x.categoryId == 2); ViewBag.MS = muasam;
+            var suckhoe = myContext.VOUCHERs.Count(x => x.categoryId == 3); ViewBag.SK = suckhoe;
+            var dulich = myContext.VOUCHERs.Count(x => x.categoryId == 4); ViewBag.DL = dulich;
+            var giaoduc = myContext.VOUCHERs.Count(x => x.categoryId == 5); ViewBag.GD = giaoduc;
+            var lamdep = myContext.VOUCHERs.Count(x => x.categoryId == 6); ViewBag.LD = lamdep;
+
+            var a = myContext.VOUCHERs.Where(x=>x.id == id).FirstOrDefault();          
+            var b = myContext.VOUCHERs.Where(x=>x.categoryId == a.categoryId && x.id != a.id).ToList();
+            ViewBag.SPCL = b;
+           
+            return View(a);
         }
         public ActionResult CategoryPromotion()
         {
